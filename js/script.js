@@ -8,20 +8,20 @@ const app = Vue.createApp({
     };
   },
   methods: {
-    // funzione per reperire 1 email
-    getRandomEmail() {
-      axios
-        .get("https://flynn.boolean.careers/exercises/api/random/mail")
-        .then((response) => {
-          this.emails.push(response.data.response);
-        });
+    // funzione per reperire X email
+    getRandomEmail(number) {
+      for (let i = 0; i < number; i++) {
+        axios
+          .get("https://flynn.boolean.careers/exercises/api/random/mail")
+          .then((response) => {
+            this.emails.push(response.data.response);
+          });
+      }
     },
   },
   mounted() {
-    // ciclo per avere 10 email random
-    for (let i = 0; i < 10; i++) {
-      this.getRandomEmail();
-    }
+    // evoco funzione
+    this.getRandomEmail(10);
   },
 });
 
