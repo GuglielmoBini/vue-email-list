@@ -11,23 +11,24 @@
       integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
       crossorigin="anonymous"
     />
+    <!-- VUE.JS -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <!-- AXIOS -->
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.2.3/axios.min.js"
       integrity="sha512-L4lHq2JI/GoKsERT8KYa72iCwfSrKYWEyaBxzJeeITM9Lub5vlTj8tufqYk056exhjo2QDEipJrg6zen/DDtoQ=="
       crossorigin="anonymous"
     ></script>
-    <!-- VUE.JS -->
-    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <!-- JAVASCRIPT -->
     <script defer src="js/script.js"></script>
     <title>Vue Email List</title>
   </head>
   <body>
     <div id="root">
-      <div class="container">
+      <div class="container my-5">
+        <h2 class="mb-4">Random Email Generator</h2>
         <ul>
-          <li></li>
+          <li v-for="email in emails">{{email}}</li>
         </ul>
       </div>
     </div>
